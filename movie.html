@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        /* 導覽列 */
+        .main-header{
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(23, 48, 41, 0.95);
+        }
+        .main-header .container{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            letter-spacing: 0.168em; 
+        }
+        .main-header .logo{
+            width: 100px;
+
+        }
+        .main-header .logo img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-header .main-nav{
+            margin: auto;
+        }
+        .main-header .main-nav a{
+            text-decoration: none;
+            color: rgb(187, 231, 214);
+            padding: 1px 1em;
+        }
+        .main-header .container .icon{
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+        }
+        
+        /* 影片置中按鈕 */
+        .button-container{
+            position: fixed;
+            top: 80%;
+            left: 46.5%;
+            /* position: absolute;
+            top: 80%;
+            left: 46.5%; */
+            /* 水平對齊 */
+            /* text-align: center; */
+            /* 元素最小高度 */
+            min-height: 100vh;
+        }
+        .button-container .button {
+
+            width: 140px;
+            height: 55px;
+            background-color: rgba(8, 46, 12, 0.521);
+            border: none;
+            /* 圓角 */
+            border-radius: 2px;
+            
+        }
+        .button-container .button a{
+            
+            font-size: 24px;
+            text-decoration: none;
+            color: rgb(213, 236, 219);
+            background-color: rgba(86, 86, 112, 0);
+
+        }
+
+        /* 影片縮放 */
+        .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        }
+        .video-container iframe, .video-container object, .video-container embed {
+        position: absolute;
+        top: 0;left: 0;
+        width: 100%;
+        height: 100%;}
+    </style>
+ 
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/icon/ld15-w.svg" alt="ld15logo">
+            </a>
+            <nav class="main-nav">
+                <a href="#">全部商品</a>
+                <a href="#">精選組合</a>
+                <a href="#">粉絲回圖</a>
+                <a href="#">使用方法</a>
+                <a href="#">產品由來</a>
+                <a href="#" class="login">登入</a>
+            </nav>
+            <nav class="icon">
+                <a href="#" class="like">
+                    <img src="img/icon/heart-w.svg" alt="like">
+                </a>    
+            </nav>
+            <nav class="icon">
+                <a href="#" class="cart">
+                    <img src="img/icon/cart-w.svg" alt="shopping-cart">
+                </a>
+            </nav>
+    
+           
+        </div>
+    </header>
+<div>
+
+    <div class="video-container">
+        <iframe width="1200" height="600" src="https://www.youtube.com/embed/2EDJisar8Ec"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="button-container">
+        <button class="button">
+            <a href="#">開始選圖</a>
+            
+        </button>
+    </div>
+</div>
+    
+</body>
+</html>

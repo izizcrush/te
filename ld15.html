@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ld15</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+        body{
+            background-color: rgb(37, 56, 51);
+        }
+        /* 消除olul特徵 */
+        ol, ul {
+	    list-style: none;
+        }
+                /* 導覽列 */
+        .main-header{
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(23, 48, 41, 0.95);
+        }
+        .main-header .container{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            letter-spacing: 0.168em; 
+        }
+        .main-header .logo{
+            width: 100px;
+
+        }
+        .main-header .logo img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-header .main-nav{
+            margin: auto;
+        }
+        .main-header .main-nav a{
+            text-decoration: none;
+            color: rgb(187, 231, 214);
+            padding: 1px 1em;
+        }
+        .main-header .container .icon{
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+        }
+
+
+        /* banner */
+        .banner-main img{
+            width: 100%;
+
+        }
+        /* 標題-全部商品 */
+        .all-product{
+            width: 100%;
+            height: 60px;
+            color: rgb(218, 240, 231);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        .all-product li h1{
+            font-size: 18px;
+            letter-spacing: 8px;
+        }
+
+        /* 商品清單 */
+        .productList{
+            width: 1020px;
+            margin: 50px auto 0px;
+        }
+        .productList img{
+            width: 100%;
+            /* margin-top: 30px;
+            margin-left:30px; */
+        }
+        .productList li{
+            position: relative;
+            float:left;
+            width: 220px;
+            height: 350px;
+            /* border: 1px dotted #efc7c1; */
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            padding-right: 5px;
+            padding-left: 10px;
+            letter-spacing: 0.168em;
+        }        
+        .productList li h2{
+            /* font-weight: bold; */
+            color: rgb(218, 240, 231);
+            margin-bottom: 10px;
+            margin-top: 20px;
+            }
+        .productList li a{
+            
+            text-decoration: none;
+        }    
+        .productList li span{
+            color: rgb(216, 212, 142);
+            font-size: 20px;
+        }            
+        .productList .like img{
+            width: 30px;
+            position: absolute;
+            bottom: 135px;
+            right: 10px;
+        }
+        .productList .cart{
+            width: 100%;
+            height: 40px;
+            margin: 10px 0px 10px 0px;
+            background-color: rgb(70, 92, 86);
+        }
+        .productList .cart img{
+            width: 30px;
+            position: absolute;
+            bottom: -5px;
+            left: 45%;
+        }
+
+        /* 更多商品按鈕上面距離 */
+        .button-moreproduct {
+            height: 500px;
+            width: 100%;
+        }
+        .button-moreproduct a{
+            width: 180px;
+            height: 50px;
+            letter-spacing: 0.168em; 
+            text-decoration: none;
+            color: rgb(218, 240, 231);
+            background-color: rgb(78, 105, 99);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clear: left;
+        }
+                /* 精選組合 */
+                .featured-product{
+            width: 100%;
+            height: 60px;
+            color: rgb(218, 240, 231);
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        .featured-product li h1{
+            font-size: 18px;
+            letter-spacing: 8px;
+        }
+
+        /* 精選組合三欄 */
+        .productfeatured .container{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .productfeatured .container li{
+            padding: 5px;
+        }
+        .productfeatured .container a{
+            text-decoration: none;
+            color: rgb(218, 240, 231);       
+            text-align: center;
+            letter-spacing: 0.168em;
+            line-height: 2.5em;  
+            
+        }
+        .productfeatured .container img{
+        height: 550px;
+        width: 390px;
+        }
+        /* 更多組合 */
+        .button-morefeatured {
+            height: 500px;
+            width: 100%;
+            margin-top: 50px;
+        }
+        .button-morefeatured a{
+            width: 180px;
+            height: 50px;
+            letter-spacing: 0.168em;
+            text-decoration: none;
+            color: rgb(218, 240, 231);
+            background-color: rgb(78, 105, 99);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clear: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/icon/ld15-w.svg" alt="ld15logo">
+            </a>
+            <nav class="main-nav">
+                <a href="#">全部商品</a>
+                <a href="#">精選組合</a>
+                <a href="#">粉絲回圖</a>
+                <a href="#">使用方法</a>
+                <a href="#">產品由來</a>
+                <a href="#" class="login">登入</a>
+            </nav>
+            <nav class="icon">
+                <a href="#" class="like">
+                    <img src="img/icon/heart-w.svg" alt="like">
+                </a>    
+            </nav>
+            <nav class="icon">
+                <a href="#" class="cart">
+                    <img src="img/icon/cart-w.svg" alt="shopping-cart">
+                </a>
+            </nav>
+    
+           
+        </div>
+    </header>
+    <div class="banner-main">
+        <img src="img/image/banner03.jpg" alt="banner-main">
+    </div>
+
+    <!-- 全部商品 -->
+
+    <div class="all-product">
+        <ul>
+            <li>
+                <h1>全部商品</h1>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="productList">
+        
+        <ul>
+            <li>
+                <div class="like">
+                    <a href="#">
+                        <img src="/img/icon/heart-w.svg" alt="like">
+                    </a>
+                </div>
+                <a href="#">
+                    <img src="/img/com-picture/LD001-A002.jpg" alt="">
+                </a>
+                <a href="#">
+                    <h2>簡約圖藤</h2>        
+                </a>
+                <span>200NT$</span>
+                <div class="cart">
+                    <a href="#">
+                        <img src="/img/icon/cart-w.svg" alt="cart">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="like">
+                    <a href="#">
+                        <img src="/img/icon/heart-w.svg" alt="like">
+                    </a>
+                </div>
+                <a href="#">
+                    <img src="/img/com-picture/LD002-A043.jpg" alt="">
+                </a>
+                <a href="#">
+                    <h2>簡約圖藤</h2>        
+                </a>
+                <span>200NT$</span>
+                <div class="cart">
+                    <a href="#">
+                        <img src="/img/icon/cart-w.svg" alt="cart">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="like">
+                    <a href="#">
+                        <img src="/img/icon/heart-w.svg" alt="like">
+                    </a>
+                </div>
+                <a href="#">
+                    <img src="/img/com-picture/LD005-A101.jpg" alt="">
+                </a>
+                <a href="#">
+                    <h2>簡約圖藤</h2>        
+                </a>
+                <span>200NT$</span>
+                <div class="cart">
+                    <a href="#">
+                        <img src="/img/icon/cart-w.svg" alt="cart">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="like">
+                    <a href="#">
+                        <img src="/img/icon/heart-w.svg" alt="like">
+                    </a>
+                </div>
+                <a href="#">
+                    <img src="/img/com-picture/LD010A151.jpg" alt="">
+                </a>
+                <a href="#">
+                    <h2>簡約圖藤</h2>        
+                </a>
+                <span>200NT$</span>
+                <div class="cart">
+                    <a href="#">
+                        <img src="/img/icon/cart-w.svg" alt="cart">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        
+
+    </div>
+    <!-- 更多商品按鈕 -->
+    <div >        
+        <div class="button-moreproduct">
+            <a href="#">
+                <div class="button-bg"></div>
+                <h2>更多商品</h2>
+            </a>
+        </div>
+    </div>           
+    <div>
+
+    </div> 
+    <div class="featured-product">
+        <ul>
+            <li>
+                <h1>精選組合</h1>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="productfeatured">
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="img/image/002.jpg" alt="featured1">
+                        <h2>極簡系列</h2>
+                        <p>簡約的線條構成,極簡冷淡的個性</p>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="img/image/001.jpg" alt="featured1">
+                        <h2>極簡系列</h2>
+                        <p>簡約的線條構成,極簡冷淡的個性</p>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="img/image/004.jpg" alt="featured1">
+                        <h2>極簡系列</h2>
+                        <p>簡約的線條構成,極簡冷淡的個性</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!-- 更多組合按鈕 -->
+<div >        
+    <div class="button-morefeatured">
+        <a href="#">
+            <div class="button-bg"></div>
+            <h2>更多組合</h2>
+        </a>
+    </div>
+</div>           
+<div>
+</body>
+</html>
